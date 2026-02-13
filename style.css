@@ -43,7 +43,7 @@
    line-height: 2; 
 }
 
-body {
+html,body {
   background: #02030a;
   min-height: 100vh;
   background-attachment: scroll;
