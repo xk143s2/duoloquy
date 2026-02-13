@@ -1,6 +1,20 @@
 @charset "utf-8";
 
-@import url("https://dl.dropboxusercontent.com/s/15w426q1djprfoiwwv2em/fonts.css?rlkey=n5710axmmi25al3e1369b05us");
+@font-face {
+  font-family: 'iconl';
+  src: url('https://cdn.jsdelivr.net/gh/xk143s2/duoloquy@main/iconl.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'icond';
+  src: url('https://cdn.jsdelivr.net/gh/xk143s2/duoloquy@main/icond.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 @font-face {
   font-family: 'dot';
