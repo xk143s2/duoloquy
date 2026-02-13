@@ -117,8 +117,14 @@ a:hover {
 a:visited {
    color: #fff !important;
 }
+
 .txt{
   position:relative;
+  width:100%;
+  height:350px;
+  padding:20px;
+  background:rgb(255,255,255,15.15);
+  color:var(--white);
   z-index:0;
 }
 
