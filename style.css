@@ -56,33 +56,27 @@
    padding: 0;
    font-weight: 400 !important;
    box-sizing: border-box;
-   letter-spacing: 0.05em;
+   letter-spacing: .07em;
    font-size: 9.2px;
-   line-height: 2; 
+   line-height: 2.2; 
 }
 
-html,body {
-  background: transparent;
-  min-height: 100vh;
+html {
   background-attachment: scroll;
   color: var(--white);
+  background-color:#030312;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,60,160,0.07), transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(150,90,255,0.08), transparent 50%),
+    linear-gradient(170deg, #0b0620 0%, #070416 55%, #030312 100%);
+  min-height:100%;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -10000;
-  pointer-events: none;
-background-color:#030312;
-background:
-  radial-gradient(circle at 20% 30%, rgba(255,60,160,0.07), transparent 45%),
-  radial-gradient(circle at 80% 70%, rgba(150,90,255,0.08), transparent 50%),
-  linear-gradient(170deg, #0b0620 0%, #070416 55%, #030312 100%);
-  transform: translate3d(0,0,0);
-  will-change: transform; 
+body {
+  background-color: #030312;
+  min-height:100vh;
 }
-
+ 
 :root {
    --background: #1D1931;
    --hn: #f10e69;
@@ -123,9 +117,6 @@ a:hover {   filter: blur(1px);
 a:visited {
    color: #fff !important;
 }
-
-
-
 
 
 /* ===== ロックカード本体 ===== */
@@ -424,7 +415,7 @@ a:visited {
   position: fixed;   /* ← 画面に固定 */
   inset: 0;          /* 上下左右いっぱい */
   pointer-events: none;
-  z-index: -1000;       /* 背景にする */
+  z-index: 0;       /* 背景にする */
 }
 
 @keyframes twinkle {
@@ -449,46 +440,59 @@ a:visited {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: -997;
+  z-index: 0;
   overflow: hidden;
 }
 
+/* =====================
+   NEBULA本体
+===================== */
 .nebula {
   position: absolute;
   width: 90vmax;
   height: 90vmax;
   border-radius: 50%;
+
   filter: blur(140px) saturate(130%);
   opacity: 0.32;
   mix-blend-mode: screen;
-  animation: nebula-drift linear infinite;
+
+  animation: nebula-drift ease-in-out infinite alternate;
 }
 
+/* ハイライト層 */
 .nebula::after {
   content: "";
   position: absolute;
   inset: -20%;
   border-radius: 50%;
+
   background: radial-gradient(
     circle at 40% 40%,
     rgba(255,255,255,0.35),
     transparent 65%
   );
+
   opacity: 0.35;
   filter: blur(160px);
   mix-blend-mode: overlay;
 }
 
+/* =====================
+   ゆっくり漂う
+===================== */
 @keyframes nebula-drift {
   from {
-    transform: translate3d(var(--x-start), var(--y-start), 0) scale(1);
+    transform:
+      translate3d(var(--x-start), var(--y-start), 0)
+      scale(1);
   }
   to {
-    transform: translate3d(var(--x-end), var(--y-end), 0) scale(1.15);
+    transform:
+      translate3d(var(--x-end), var(--y-end), 0)
+      scale(1.15);
   }
 }
-
-
 
 
 .hbg {
@@ -660,18 +664,21 @@ hn {
    -webkit-text-fill-color: transparent;
    text-fill-color: transparent;
    text-shadow: 
-      0 0 5px var(--hn),
-      0 0 14px #ff2ed1aa,
-      0 0 28px #ff6be088,
-      0 0 44px #ffaff255,
-      0 0 70px #c3005244;
+      0 0 2px var(--hn),
+      0 0 4px #ff2ed1aa,
+      0 0 6px #ff6be088,
+      0 0 8px #ffaff255,
+      0 0 10px #c3005244;
+   overflow:visible;
    padding: 0 4px;
-   border-radius: 4px;
+   border-radius: 4px; 
+   opacity:.8;
 }
 
 .hnjs,
 .drjs{
-  position: relative;
+  position: relative; 
+  opacity:.8;
 }
 
 .name-icon{
@@ -698,11 +705,12 @@ hn {
    -webkit-text-fill-color: transparent;
    text-fill-color: transparent;
    text-shadow: 
-      0 0 5px var(--hn),
-      0 0 14px #ff2ed1aa,
-      0 0 28px #ff6be088,
-      0 0 44px #ffaff255,
-      0 0 70px #c3005244;
+      0 0 2px var(--hn),
+      0 0 4px #ff2ed1aa,
+      0 0 6px #ff6be088,
+      0 0 8px #ffaff255,
+      0 0 10px #c3005244;
+   overflow:visible;
 }
 
 dr {
@@ -721,13 +729,15 @@ dr {
    -webkit-text-fill-color: transparent;
    text-fill-color: transparent;
    text-shadow: 
-      0 0 5px var(--dr),
-      0 0 14px #5cd1e6aa,
-      0 0 28px #a0f0ff88,
-      0 0 44px #a0f0ff55,
-      0 0 70px #1a6d7a44;
+      0 0 2px var(--dr),
+      0 0 4px #5cd1e6aa,
+      0 0 6px #a0f0ff88,
+      0 0 8px #a0f0ff55,
+      0 0 10px #1a6d7a44;
    padding: 0 4px;
    border-radius: 4px;
+   overflow:visible; 
+   opacity:.8;
 }
 .drjs {
    color: var(--dr) !important;
@@ -745,11 +755,12 @@ dr {
    -webkit-text-fill-color: transparent;
    text-fill-color: transparent;
    text-shadow: 
-      0 0 5px var(--dr),
-      0 0 14px #5cd1e6aa,
-      0 0 28px #a0f0ff88,
-      0 0 44px #a0f0ff55,
-      0 0 70px #1a6d7a44;
+      0 0 2px var(--dr),
+      0 0 4px #5cd1e6aa,
+      0 0 6px #a0f0ff88,
+      0 0 8px #a0f0ff55,
+      0 0 10px #1a6d7a44;
+   overflow:visible;
 }
 
 /* ===== header layout ===== */
@@ -758,7 +769,7 @@ dr {
   display: flex;
   align-items: center;
   gap: 12px; /* ← 少し詰める */
-  padding: 6px 28px 26px 0;
+  padding: 15px 28px 16px 0;
 }
 
 /* ===== dot gradient (wide only ver.) ===== */
@@ -784,7 +795,7 @@ dr {
 /* ===== meta block ===== */
 .diary-header.constellation .meta {
   position: relative;
-  padding: 10px 12px; /* ← 横paddingだけ詰める */
+  padding: 0 12px; /* ← 横paddingだけ詰める */
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -852,7 +863,7 @@ dr {
    line-height: 2;
    display: block;
    margin:30px 0;
-   padding:25px 0;
+   padding:19px 0 45px;
    color: var(--white) !important;
 
    background: linear-gradient(
@@ -865,13 +876,12 @@ dr {
    -webkit-backdrop-filter: blur(4px) saturate(150%);
 
    border: 1px solid rgba(255,255,255,0.12);
-   box-shadow:
-     0 0 14px rgba(255,255,255,.05),
-     inset 0 0 7px rgba(255,255,255,0.05);
+  
 
+box-shadow:
+  inset 0 0 40px rgba(255,255,255,.03),
+  0 0 60px rgba(120,80,255,.15);
    border-radius:14px;
-
-   /* ▼ ここからフェード用追加 */
    opacity:0;
    transform:translateY(70px) scale(.94);
    filter:blur(8px);
@@ -892,11 +902,11 @@ dr {
 /* ===== box ===== */
 .box {
   font-size: 9px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: visible;
   padding: 0 24px 0 24px;
   text-align: justify;
-  height: 400px;
+  max-height: 400px;
   width: 100%;
 }
 
@@ -914,7 +924,7 @@ dr {
   position:relative;
   margin-top:14px;
   padding:40px 24px 26px;
-  background:rgba(255,255,255,.15);
+  background:rgba(255,255,255,.07);
   border:1px solid rgb(255,255,255,1);
 }
 
@@ -924,8 +934,8 @@ dr {
   position:absolute;
   inset:0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
   background-size:6px 6px;
   pointer-events:none;
   z-index:0;
@@ -1025,7 +1035,7 @@ dr {
   transform:translate(-50%,-50%);
 
   white-space:nowrap;
-  opacity:.7;
+  opacity:.5;
 }
 
 .diary-divider.hn::before{
@@ -1114,7 +1124,7 @@ dr {
 
 .music-ui{
   width:80%;
-  margin:20px auto 10px;
+  margin:20px auto 0;
   text-align:center;
 }
 
@@ -1136,7 +1146,7 @@ dr {
 /* 音程バー */
 .music-bar{
   width:100%;
-  height:2px;
+  height:1px;
   margin:0 auto;
   position:relative;
   overflow:hidden;
@@ -1478,6 +1488,7 @@ a[href*="#top"]::before {
    content: '\e12c';
    margin:0 6px;
    font-size: 13px;
+   visibility: visible;
 }
 
 a[href*="tweet_edit.php"] {
@@ -1487,9 +1498,9 @@ a[href*="tweet_edit.php"] {
 
 a[href*="tweet_edit.php"]::before {
   visibility: visible;
-  position: absolute;
-  right:-2px;
-  top: -18px;
+  position: relative;
+  right:-29px;
+  top: -6px;
   text-shadow:0 0 3px;
   font-family: 'Phosphor-Thin';
   content: '\e270';
@@ -1627,7 +1638,7 @@ form p,form span{
   display:none;
 }
 #tweets {
-  margin-bottom:15px;
+  margin:0 0 15px 0;
   background: linear-gradient(
     160deg,
     rgba(170,220,255,0.12),
@@ -1656,7 +1667,7 @@ form p,form span{
   display:block;
   background:none !important;
   color: var(--white) !important ;
-  padding:26px 14px 19px 69px !important;
+  padding:2px 14px 2px 69px !important;
   border: 1px solid rgb(255,255,255,0) !important;
   border-radius:14px;
   font-size:9.6px !important ;
@@ -1671,15 +1682,15 @@ form p,form span{
 }
 .tweet-card span:nth-child(2n+1) {
   position:absolute;
-  top:15px;
-  font-size:8.8px !important ;
-  color: rgb(255,255,255,.6)  ;
+  top:0;
+  font-size:8.6px !important ;
+  color: rgb(255,255,255,1)  ;
 }
 .tweet-card span:nth-child(2n) {
   position:absolute;
-  top:32px;
-  font-size:7.3px;
-  color: rgb(255,255,255,.6) !important ;
+  top:16px;
+  font-size:7px;
+  color: rgb(255,255,255,.4) !important ;
 }
 
 .text-center-mb {
@@ -1689,18 +1700,33 @@ form p,form span{
   color:var(--white);
   font-size:0;
 }
+
+.res-wrapper > div > span > span {
+  display:none;
+} 
+.res-wrapper > div > span:last-child {
+  display: none;
+}
 .text-center-box {
   color:transparent;
 }
-.text-center-box a {
+.text-center-mb,
+.container,
+.res-wrapper,
+.res-wrapper > div,
+.post-content {
+  border: none !important;
+}
+.container > .text-center-box a {
+  visibility: hidden;
   color:var(--white);
   font-size:0;
 }
 .tweet-card + .tweet-card {
   border-top: none;
   position: relative;
-  margin-top: 16px;
-  padding-top: 16px;
+  margin-top: 30px;
+  padding-top: 30px;
 }
 .tweet-card + .tweet-card::before {
   display:block;
@@ -1711,7 +1737,7 @@ form p,form span{
   color:rgb(255,255,255,.6);
   text-shadow: 0 0 3px;
   letter-spacing:7px;
-  top: -25px;
+  top: -30px;
   left: 0;
   width: 100%;
   text-align:center;
@@ -1762,6 +1788,7 @@ form p,form span{
   font-size:13px;
   margin:0 6px;
   color:var(--white);
+  visibility:visible;
 }
 
 #toggle-tweet-form {
@@ -1911,4 +1938,12 @@ input[name="auto_delete"]:checked::after {
 .fade.is-visible{
   opacity:1;
   transform:translateY(0);
+}
+
+.menu-overlay .menu-nav a {
+  color: #999999 !important;
+}
+
+.menu-overlay .menu-nav button {
+  color: #999999 !important;
 }
