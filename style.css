@@ -74,14 +74,22 @@ html{
 }
 
 body{
-  background-color:#000000;
   min-height:100vh;
+}
+
+body::before {
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+  background-image: radial-gradient(at 26% 99%, rgba(61, 137, 200, 0.11), rgba(40, 26, 52, 0.17) 50%, rgba(197, 125, 233, 0.14)), radial-gradient(at 0% 19%, rgba(61, 23, 83, 0.11), rgba(22, 7, 248, 0.14) 50%, rgba(32, 13, 42, 0.21));
+  opacity:.7;
 }
 
 body::-webkit-scrollbar {
   display: none;
 }
-
  
 :root {
    --background: #1D1931;
@@ -429,77 +437,6 @@ a:visited {
    50%  { opacity: 1; transform: scale(1.2); }
    100% { opacity: 0; transform: scale(0.8); }
 }
-
-/* =========================
-          NEBULA
-========================= */
-.star.respond {
-  animation-play-state: paused;
-  opacity: 1 !important;
-  transform: scale(1.5);
-  transition:
-    opacity 1.2s ease,
-    transform 1.2s ease;
-}
-
-#nebula-layer {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-/* =====================
-   NEBULA本体
-===================== */
-.nebula {
-  position: absolute;
-  width: 90vmax;
-  height: 90vmax;
-  border-radius: 50%;
-
-  filter: blur(140px) saturate(130%);
-  opacity: 0.32;
-  mix-blend-mode: screen;
-
-  animation: nebula-drift ease-in-out infinite alternate;
-}
-
-/* ハイライト層 */
-.nebula::after {
-  content: "";
-  position: absolute;
-  inset: -20%;
-  border-radius: 50%;
-
-  background: radial-gradient(
-    circle at 40% 40%,
-    rgba(255,255,255,0.35),
-    transparent 65%
-  );
-
-  opacity: 0.35;
-  filter: blur(160px);
-  mix-blend-mode: overlay;
-}
-
-/* =====================
-   ゆっくり漂う
-===================== */
-@keyframes nebula-drift {
-  from {
-    transform:
-      translate3d(var(--x-start), var(--y-start), 0)
-      scale(1);
-  }
-  to {
-    transform:
-      translate3d(var(--x-end), var(--y-end), 0)
-      scale(1.15);
-  }
-}
-
 
 .hbg {
   width:50px;
