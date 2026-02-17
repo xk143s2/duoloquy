@@ -665,11 +665,11 @@ hn {
    -webkit-text-fill-color: transparent;
    text-fill-color: transparent;
    text-shadow: 
-      0 0 2px var(--hn),
-      0 0 4px #ff2ed1aa,
-      0 0 6px #ff6be088,
-      0 0 8px #ffaff255,
-      0 0 10px #c3005244;
+      0 0 5px var(--hn),
+      0 0 14px #ff2ed1aa,
+      0 0 28px #ff6be088,
+      0 0 44px #ffaff255,
+      0 0 70px #c3005244;
    overflow:visible;
    padding: 0 4px;
    border-radius: 4px; 
@@ -706,11 +706,11 @@ hn {
    -webkit-text-fill-color: transparent;
    text-fill-color: transparent;
    text-shadow: 
-      0 0 2px var(--hn),
-      0 0 4px #ff2ed1aa,
-      0 0 6px #ff6be088,
-      0 0 8px #ffaff255,
-      0 0 10px #c3005244;
+      0 0 5px var(--hn),
+      0 0 14px #ff2ed1aa,
+      0 0 28px #ff6be088,
+      0 0 44px #ffaff255,
+      0 0 70px #c3005244;
    overflow:visible;
 }
 
@@ -730,11 +730,11 @@ dr {
    -webkit-text-fill-color: transparent;
    text-fill-color: transparent;
    text-shadow: 
-      0 0 2px var(--dr),
-      0 0 4px #5cd1e6aa,
-      0 0 6px #a0f0ff88,
-      0 0 8px #a0f0ff55,
-      0 0 10px #1a6d7a44;
+      0 0 5px var(--dr),
+      0 0 14px #5cd1e6aa,
+      0 0 28px #a0f0ff88,
+      0 0 44px #a0f0ff55,
+      0 0 70px #1a6d7a44;
    padding: 0 4px;
    border-radius: 4px;
    overflow:visible; 
@@ -756,11 +756,11 @@ dr {
    -webkit-text-fill-color: transparent;
    text-fill-color: transparent;
    text-shadow: 
-      0 0 2px var(--dr),
-      0 0 4px #5cd1e6aa,
-      0 0 6px #a0f0ff88,
-      0 0 8px #a0f0ff55,
-      0 0 10px #1a6d7a44;
+      0 0 5px var(--dr),
+      0 0 14px #5cd1e6aa,
+      0 0 28px #a0f0ff88,
+      0 0 44px #a0f0ff55,
+      0 0 70px #1a6d7a44;
    overflow:visible;
 }
 
