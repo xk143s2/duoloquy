@@ -1177,31 +1177,6 @@ box-shadow:
   height:400px;
   margin:auto;
 }
-.book-wrapper::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(1px circle at 8% 12%, var(--hn) 70%, transparent 100%),
-    radial-gradient(.8px circle at 22% 28%, var(--dr) 75%, transparent 100%),
-    radial-gradient(.6px circle at 38% 65%, var(--white) 65%, transparent 100%),
-    radial-gradient(.5px circle at 68% 82%, var(--hn) 70%, transparent 100%),
-    radial-gradient(1.0px circle at 48% 35%, rgba(var(--dr-rgb),0.9) 80%, transparent 100%),
-    radial-gradient(0.8px circle at 15% 55%, rgba(var(--hn-rgb),0.6) 70%, transparent 100%),
-    radial-gradient(0.6px circle at 82% 22%, rgba(255,255,255,0.5) 70%, transparent 100%),
-    radial-gradient(0.9px circle at 4% 78%, var(--dr) 65%, transparent 100%),
-    radial-gradient(1.1px circle at 91% 41%, rgba(var(--dr-rgb),0.85) 75%, transparent 100%),
-    radial-gradient(0.7px circle at 55% 18%, var(--hn) 70%, transparent 100%),
-    radial-gradient(0.95px circle at 19% 91%, rgba(var(--dr-rgb),0.8) 65%, transparent 100%),
-    radial-gradient(1.35px circle at 41% 7%, var(--hn) 68%, transparent 100%),
-    radial-gradient(1.25px circle at 73% 88%, rgba(var(--dr-rgb),0.88) 72%, transparent 100%),
-    radial-gradient(0.7px circle at 77% 24%, var(--white) 70%, transparent 100%);
-  background-size: 180px 180px;
-  filter: blur(.3px);
-  opacity: 0.42;
-  z-index: -2;
-}
 
 /* ===== BOOK ===== */
 .book{
