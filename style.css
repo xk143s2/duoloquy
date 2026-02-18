@@ -417,6 +417,30 @@ a:visited {
   100% { transform: translate(0, 0); }
 }
 
+#shooting-layer{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.shooting-star{
+  position: absolute;
+  height: 1px;
+  width: 120px;
+  opacity: 0;
+  transform-origin: left center;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.9),
+    rgba(var(--dr-rgb),0.6),
+    rgba(var(--hn-rgb),0.4),
+    transparent
+  );
+  filter: blur(.3px);
+  will-change: transform, opacity;
+}
+
 .star {
    position: absolute;
    border-radius: 50%;
