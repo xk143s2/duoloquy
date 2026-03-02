@@ -408,11 +408,10 @@ box-shadow:
   width: 80% !important;
   height: 40px !important;
   display: block;
-  margin: 0 auto;
   font-size: 9px !important;
   padding: 0 15px !important;
   border: none !important;
-  margin:-10px 0 !important;
+  margin:-10px auto !important;
 }
 
 /* ===== ロゴ ===== */
